@@ -1,0 +1,1308 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GNFGS-MUN'26 | Official Brochure</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-navy: #0a0e2a;
+    --royal-blue: #1a2a6c;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --gold-pale: #fdf3d0;
+    --crimson: #8b1a1a;
+    --ivory: #faf6ee;
+    --text-dark: #1a1208;
+    --text-mid: #3a2e10;
+    --un-blue: #009edb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cormorant Garamond', serif;
+    background: var(--ivory);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO COVER PAGE ── */
+  .cover {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--deep-navy);
+  }
+
+  /* Animated starfield */
+  .stars {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.9) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 80%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 60% 85%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 45% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 45%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 30%, rgba(255,255,255,0.7) 0%, transparent 100%);
+  }
+
+  /* Globe wireframe background */
+  .globe-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 80% at 50% 50%, rgba(26,42,108,0.6) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,158,219,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 20% 80%, rgba(201,168,76,0.1) 0%, transparent 60%);
+  }
+
+  /* Decorative arc lines */
+  .arc-container {
+    position: absolute; inset: 0; overflow: hidden;
+  }
+  .arc-container svg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    opacity: 0.12;
+  }
+
+  /* Gold border frame */
+  .cover-frame {
+    position: absolute; inset: 20px;
+    border: 1px solid rgba(201,168,76,0.4);
+    pointer-events: none;
+  }
+  .cover-frame::before {
+    content: '';
+    position: absolute; inset: 6px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .corner {
+    position: absolute; width: 40px; height: 40px;
+  }
+  .corner.tl { top: -1px; left: -1px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+  .corner.tr { top: -1px; right: -1px; border-top: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+  .corner.bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+  .corner.br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+
+  .cover-content {
+    position: relative; z-index: 10;
+    text-align: center;
+    padding: 60px 40px;
+    animation: fadeInUp 1.2s ease both;
+  }
+
+  .un-emblem {
+    width: 90px; height: 90px;
+    margin: 0 auto 20px;
+    animation: spinSlow 30s linear infinite;
+  }
+
+  .school-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
+    border: 1px solid rgba(201,168,76,0.5);
+    padding: 8px 30px;
+    letter-spacing: 0.25em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .cover h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    background: linear-gradient(180deg, #ffffff 0%, var(--gold-light) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  .mun-year {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.35em;
+    margin-bottom: 20px;
+  }
+
+  .cover-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.1em;
+    margin-bottom: 36px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+  .cover-meta-item .label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item .value {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.1em;
+  }
+
+  .cover-divider {
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 30px auto;
+  }
+
+  .school-name-cover {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── SECTION STYLES ── */
+  section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .section-label::before, .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--royal-blue);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .section-body {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+
+  /* ── PRINCIPAL MESSAGE ── */
+  .principal-section {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, #0d1540 100%);
+    max-width: 100%;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .principal-section::before {
+    content: '"';
+    position: absolute;
+    font-family: 'Cinzel', serif;
+    font-size: 30rem;
+    color: rgba(201,168,76,0.04);
+    top: -80px;
+    left: -20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .principal-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+  }
+  .principal-section .section-label { color: var(--gold); }
+  .principal-section .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+  .principal-section .section-label::after { background: linear-gradient(90deg, var(--gold), transparent); }
+  .principal-section .section-title { color: #fff; }
+  .principal-section .section-body { color: rgba(255,255,255,0.8); }
+
+  .highlight-box {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: rgba(201,168,76,0.06);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    line-height: 1.8;
+  }
+
+  /* ── COMMITTEES SECTION ── */
+  .committees-bg {
+    background: var(--ivory);
+    max-width: 100%;
+    padding: 80px 0;
+    position: relative;
+  }
+  .committees-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    margin-top: 48px;
+  }
+
+  .committee-card {
+    background: #fff;
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .committee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(10,14,42,0.12);
+  }
+  .committee-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .committee-number {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .committee-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--royal-blue);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .committee-full {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .agenda-list {
+    list-style: none;
+  }
+  .agenda-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    padding: 6px 0 6px 18px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    position: relative;
+    line-height: 1.5;
+  }
+  .agenda-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    font-size: 0.4rem;
+    color: var(--gold);
+    top: 10px;
+  }
+  .agenda-list li:last-child { border-bottom: none; }
+
+  /* Special cards */
+  .committee-card.ip { border-color: rgba(0,158,219,0.3); }
+  .committee-card.ip::before { background: linear-gradient(90deg, var(--un-blue), rgba(0,158,219,0.4)); }
+  .committee-card.ip .committee-name { color: #007aad; }
+
+  .committee-card.lok { border-color: rgba(139,26,26,0.2); }
+  .committee-card.lok::before { background: linear-gradient(90deg, var(--crimson), rgba(139,26,26,0.4)); }
+  .committee-card.lok .committee-name { color: var(--crimson); }
+
+  .committee-card.shark::before { background: linear-gradient(90deg, #2e7d32, #66bb6a); }
+  .committee-card.shark .committee-name { color: #1b5e20; }
+
+  /* ── ELIGIBILITY & DATES ── */
+  .info-band {
+    background: linear-gradient(135deg, #0f1535 0%, #1a2a6c 100%);
+    max-width: 100%;
+    padding: 80px 0;
+    position: relative;
+  }
+  .info-band-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .info-band .section-title { color: #fff; font-size: 1.8rem; }
+  .info-band .section-body { color: rgba(255,255,255,0.75); font-size: 1rem; }
+  .info-band .section-label { color: var(--gold); }
+  .info-band .section-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+  .info-band .section-label::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  .eligibility-tag {
+    display: inline-block;
+    background: rgba(201,168,76,0.2);
+    border: 1px solid var(--gold);
+    padding: 8px 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    margin: 8px 6px 0 0;
+  }
+
+  /* ── REGISTRATION & FEES ── */
+  .reg-section {
+    background: var(--ivory);
+    max-width: 100%;
+    padding: 80px 0;
+  }
+  .reg-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .fee-table th {
+    background: var(--royal-blue);
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    text-align: left;
+  }
+  .fee-table td {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    color: var(--text-mid);
+  }
+  .fee-table tr:last-child td { border-bottom: none; }
+  .fee-table tr:nth-child(even) td { background: rgba(201,168,76,0.04); }
+
+  .bank-card {
+    background: linear-gradient(135deg, #0a0e2a, #1a2a6c);
+    padding: 36px;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bank-card::after {
+    content: '______';
+    position: absolute;
+    right: 30px; top: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.2);
+    letter-spacing: 0.2em;
+  }
+  .bank-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .bank-field {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 10px 20px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+  }
+  .bank-field:last-child { border-bottom: none; }
+  .bank-field .field-label { color: rgba(255,255,255,0.45); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .bank-field .field-value { color: rgba(255,255,255,0.8); }
+  .field-blank {
+    display: inline-block;
+    min-width: 160px;
+    border-bottom: 1px dashed rgba(255,255,255,0.35);
+    color: transparent;
+  }
+
+  /* ── AWARDS ── */
+  .awards-section {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, #1a0a08 100%);
+    max-width: 100%;
+    padding: 80px 0;
+  }
+  .awards-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .award-card {
+    text-align: center;
+    padding: 32px 20px;
+    border: 1px solid rgba(201,168,76,0.25);
+    background: rgba(201,168,76,0.04);
+    position: relative;
+  }
+  .award-card::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(201,168,76,0.08);
+    pointer-events: none;
+  }
+
+  .award-icon {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .award-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .award-points {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .award-points span {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  .best-school {
+    margin-top: 40px;
+    padding: 36px;
+    border: 2px solid var(--gold);
+    background: rgba(201,168,76,0.05);
+    text-align: center;
+    position: relative;
+  }
+  .best-school h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+  .best-school p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+  }
+
+  /* ── CONTACT & FOOTER ── */
+  .contact-section {
+    background: var(--ivory);
+    max-width: 100%;
+    padding: 80px 0 0;
+  }
+  .contact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .contact-box h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--royal-blue);
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+    font-size: 1rem;
+    color: var(--text-mid);
+  }
+  .contact-item .icon {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .blank-field {
+    border-bottom: 1px dashed rgba(10,14,42,0.3);
+    min-width: 180px;
+    display: inline-block;
+  }
+
+  .notice-box {
+    background: rgba(139,26,26,0.06);
+    border-left: 3px solid var(--crimson);
+    padding: 16px 22px;
+    margin-top: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--crimson);
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER BAR ── */
+  .footer {
+    margin-top: 60px;
+    background: var(--deep-navy);
+    padding: 40px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+
+  .footer-school {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .footer-divider {
+    width: 120px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px auto;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── DECORATIVE SEPARATOR ── */
+  .ornament {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 0.4em;
+    padding: 20px 0;
+  }
+
+  .full-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    section, .principal-inner, .committees-inner, .info-band-inner,
+    .reg-inner, .awards-inner, .contact-inner { padding: 0 20px; }
+    .info-band-inner, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .committee-grid { grid-template-columns: 1fr; }
+    .cover-frame { inset: 10px; }
+    .cover-content { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════ -->
+<div class="cover">
+  <div class="stars"></div>
+  <div class="globe-bg"></div>
+
+  <div class="arc-container">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <!-- World map latitude lines -->
+      <ellipse cx="600" cy="400" rx="500" ry="350" fill="none" stroke="white" stroke-width="0.6"/>
+      <ellipse cx="600" cy="400" rx="500" ry="200" fill="none" stroke="white" stroke-width="0.4"/>
+      <ellipse cx="600" cy="400" rx="500" ry="80" fill="none" stroke="white" stroke-width="0.3"/>
+      <line x1="100" y1="400" x2="1100" y2="400" stroke="white" stroke-width="0.4"/>
+      <line x1="600" y1="50" x2="600" y2="750" stroke="white" stroke-width="0.4"/>
+      <ellipse cx="600" cy="400" rx="250" ry="350" fill="none" stroke="white" stroke-width="0.3"/>
+      <ellipse cx="600" cy="400" rx="140" ry="350" fill="none" stroke="white" stroke-width="0.25"/>
+      <ellipse cx="600" cy="400" rx="400" ry="350" fill="none" stroke="white" stroke-width="0.3"/>
+    </svg>
+  </div>
+
+  <div class="cover-frame">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+  </div>
+
+  <div class="cover-content">
+    <!-- UN Emblem SVG -->
+    <svg class="un-emblem" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="46" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
+      <circle cx="50" cy="50" r="38" stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.5"/>
+      <!-- Latitude lines -->
+      <ellipse cx="50" cy="50" rx="38" ry="15" stroke="#c9a84c" stroke-width="0.8" fill="none" opacity="0.6"/>
+      <ellipse cx="50" cy="50" rx="38" ry="28" stroke="#c9a84c" stroke-width="0.6" fill="none" opacity="0.4"/>
+      <!-- Longitude lines -->
+      <line x1="12" y1="50" x2="88" y2="50" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+      <line x1="50" y1="12" x2="50" y2="88" stroke="#c9a84c" stroke-width="0.8" opacity="0.6"/>
+      <ellipse cx="50" cy="50" rx="20" ry="38" stroke="#c9a84c" stroke-width="0.6" fill="none" opacity="0.4"/>
+      <!-- Olive branches simplified -->
+      <path d="M 25 62 Q 20 58 18 52 Q 22 54 24 56 Q 22 50 20 46 Q 24 48 26 52 Q 24 46 26 42 Q 30 45 28 50 Q 32 46 34 50 Q 32 54 28 56" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.7"/>
+      <path d="M 75 62 Q 80 58 82 52 Q 78 54 76 56 Q 78 50 80 46 Q 76 48 74 52 Q 76 46 74 42 Q 70 45 72 50 Q 68 46 66 50 Q 68 54 72 56" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.7"/>
+    </svg>
+
+    <div class="school-badge">Guru Nanak Foundation Global School, Jalandhar</div>
+
+    <h1>GNFGS</h1>
+    <div class="mun-year">MUN ' 26</div>
+
+    <div class="cover-tagline">
+      "Deliberate. Debate. Determine the Future."
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="label">Edition</span>
+        <span class="value">First Chapter</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Date</span>
+        <span class="value">24th & 25th August , 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="label">Duration</span>
+        <span class="value">Two Days</span>
+      </div>
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="school-name-cover">
+      GURU NANAK FOUNDATION GLOBAL SCHOOL<br>
+      URBAN ESTATE, PHASE-1, JALANDHAR
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PRINCIPAL'S MESSAGE
+══════════════════════════════════════ -->
+<div class="principal-section">
+  <div class="principal-inner">
+    <div class="section-label">Honourable Principal</div>
+
+    <h2 class="section-title">A Message of Welcome &amp; Distinction</h2>
+
+    <div class="highlight-box">
+     Dr. Harleen Kaur, "We are immensely honoured to announce that Guru Nanak Foundation Global School, Urban Estate, Phase-1, Jalandhar, shall serve as the proud host institution for the inaugural chapter of GNFGS-MUN'26."
+    </div>
+
+    <p class="section-body">
+      This distinguished two-day conference is meticulously scheduled to convene in the year 2026, bringing together young minds of exceptional calibre from institutions across the region. GNFGS-MUN'26 is conceived as a transformative intellectual arena — one where the leaders of tomorrow engage with the pressing geopolitical, socioeconomic, and humanitarian challenges confronting our global community today.
+    </p>
+
+    <p class="section-body" style="margin-top:18px;">
+      Through the esteemed Model United Nations framework, delegates shall be endowed with an unparalleled opportunity to refine their capacities for critical deliberation, diplomatic negotiation, and persuasive advocacy — skills that transcend the conference hall and resonate throughout a lifetime of leadership.
+    </p>
+
+    <p class="section-body" style="margin-top:18px;">
+      We extend a most cordial and enthusiastic invitation to the emerging luminaries of your distinguished institution to grace GNFGS-MUN'26 with their presence — an event architectured to be both <em>educatively elevating</em> and profoundly enriching.
+    </p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     COMMITTEES
+══════════════════════════════════════ -->
+<div class="committees-bg">
+  <div class="committees-inner">
+    <div class="section-label">Model Committees</div>
+    <h2 class="section-title">Forums of Global Deliberation</h2>
+    <p class="section-body" style="max-width:700px;">
+      Delegates are warmly invited to participate as representatives across the following distinguished model committees, each addressing critical agendas of our contemporary world.
+    </p>
+
+    <div class="committee-grid">
+
+      <!-- UNGA -->
+      <div class="committee-card">
+        <div class="committee-number">01</div>
+        <div class="committee-name">UNGA</div>
+        <div class="committee-full">United Nations General Assembly — Social</div>
+        <ul class="agenda-list">
+          <li>Climate Change &amp; Sustainable Development</li>
+          <li>Artificial Intelligence and Technology Governance</li>
+          <li>Promoting Cybersecurity &amp; Responsible Digital Governance</li>
+        </ul>
+      </div>
+
+      <!-- UNSC -->
+      <div class="committee-card">
+        <div class="committee-number">02</div>
+        <div class="committee-name">UNSC</div>
+        <div class="committee-full">United Nations Security Council</div>
+        <ul class="agenda-list">
+          <li>Refugee Crisis &amp; International Responsibility</li>
+          <li>Artificial Intelligence and Global Security</li>
+          <li>Preventing Human Trafficking During Armed Conflicts</li>
+        </ul>
+      </div>
+
+      <!-- Shark Tank -->
+      <div class="committee-card shark">
+        <div class="committee-number">03</div>
+        <div class="committee-name">Shark Tank</div>
+        <div class="committee-full">Innovation &amp; Entrepreneurship Forum</div>
+        <ul class="agenda-list">
+          <li>Business &amp; Entrepreneurship Innovations</li>
+          <li>Student-Centric Entrepreneurial Ventures</li>
+          <li>Finance, Investment &amp; Emerging Markets</li>
+        </ul>
+      </div>
+
+      <!-- International Press -->
+      <div class="committee-card ip">
+        <div class="committee-number">04</div>
+        <div class="committee-name">International Press</div>
+        <div class="committee-full">IP — Journalism · Photography · Caricature</div>
+        <ul class="agenda-list">
+          <li>Committee Session Coverage &amp; Reports</li>
+          <li>Opinion Editorials (Op-Eds)</li>
+          <li>Delegate Action Shots &amp; Photography</li>
+          <li>Behind-the-Scenes &amp; Candid Documentation</li>
+          <li>Committee Proceedings &amp; Visual Journalism</li>
+        </ul>
+      </div>
+
+      <!-- Lok Sabha -->
+      <div class="committee-card lok">
+        <div class="committee-number">05</div>
+        <div class="committee-name">Lok Sabha</div>
+        <div class="committee-full">Indian Parliamentary Simulation</div>
+        <ul class="agenda-list">
+          <li>Education Reforms in India</li>
+          <li>Cybersecurity &amp; Social Media Regulation</li>
+          <li>Women's Safety and Empowerment</li>
+          <li>Strengthening India's Internal Security</li>
+        </ul>
+      </div>
+      <!-- All India Filmy Meet (AIFM) -->
+      <div class="committee-card lok">
+        <div class="committee-number">06</div>
+        <div class="committee-name">All India Filmy Meet (AIFM)</div>
+        <div class="committee-full">Specialized and Creative committee</div>
+        <ul class="agenda-list">
+          <li>Impact of OTT Platforms on Traditional Cinema</li>
+          <li>Nepotism vs Meritocracy</li>
+          <li>Influence of Cinema on Youth and Society</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     ELIGIBILITY & VENUE
+══════════════════════════════════════ -->
+<div class="info-band">
+  <div class="info-band-inner">
+    <div>
+      <div class="section-label">Eligibility Criterion</div>
+      <h2 class="section-title">Who May Participate?</h2>
+      <p class="section-body">
+        GNFGS-MUN'26 extends its eligibility to students within the age bracket of <strong style="color:var(--gold-light);">11 to 19 years</strong>, encompassing individuals currently enrolled in classes <strong style="color:var(--gold-light);">8th through 12th</strong>.
+      </p>
+      <p class="section-body" style="margin-top:14px;">
+        This conference continues to serve as an invaluable forum for the meticulous cultivation of rhetorical artistry and the substantive enhancement of one's aptitude for diplomatic advocacy.
+      </p>
+      <div style="margin-top:22px;">
+        <div class="eligibility-tag">Age: 11–19 Years</div>
+        <div class="eligibility-tag">Classes VIII–XII</div>
+        <div class="eligibility-tag">All Schools Welcome</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Date &amp; Venue</div>
+      <h2 class="section-title">Conference Details</h2>
+      <div style="padding:28px; background:rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.2); margin-bottom:24px;">
+        <div style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Conference Dates</div>
+        <div style="font-family:'Cinzel',serif;font-size:1.3rem;color:#fff;">August 24th & 25th , 2026</div>
+      </div>
+      <div style="padding:28px; background:rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.2);">
+        <div style="font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Venue</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.7;">
+           1st Day in Guru Nanak Foundation Global School.<br>
+          2nd Day in LPU Campus.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     REGISTRATION & FEES
+══════════════════════════════════════ -->
+<div class="reg-section">
+  <div class="reg-inner">
+    <div class="section-label">Registration &amp; Allotment</div>
+    <h2 class="section-title">Secure Your Portfolio</h2>
+
+    <p class="section-body">
+      Committee and portfolio allocations, once officially assigned, shall be considered final and non-transferable and will not be subject to any modification under any circumstances.
+
+Delegation preferences and committee requests must be submitted exclusively through the official registration form provided below in this brochure. The Organising Committee reserves the sole discretion to allocate committees and portfolios based on availability and the conference requirements.</span>
+    </p>
+
+    <p class="section-body" style="margin-top:14px;">
+      Each participating school is required to be accompanied by <strong>one faculty advisor</strong> per delegation. Comprehensive documentation — including the conference's Rules of Procedure, committee details, country matrix, executive board composition, and the official itinerary — shall be disseminated via our official social media channels, as well as through direct briefings by our assigned coordination team.
+    </p>
+
+    <div class="notice-box">
+      ⚑ &nbsp; EARLY REGISTRATION DEADLINE: To ensure allotment of preferred portfolios, delegates must register on or before <strong>30th July, 2026.</strong>
+    </div>
+
+    <p class="section-body" style="margin-top:24px;">
+      Upon successful registration, each delegate shall be formally assigned a portfolio — comprising the nation or designated post they shall represent, the corresponding committee assignment, and the specific agenda topic for deliberation. Portfolio allotments shall be determined with due consideration of prior MUN experience.
+    </p>
+
+    <div class="notice-box" style="margin-top:16px;">
+      ★ &nbsp; Allotments shall be officially confirmed exclusively upon receipt of the requisite conference fee. Fees, once remitted, are strictly <strong>non-transferable and non-refundable.</strong>
+    </div>
+
+    <!-- Fee Table -->
+    <div style="margin-top:48px;">
+      <div class="section-label">Conference Fees</div>
+      <h3 style="font-family:'Cinzel',serif;font-size:1.4rem;color:var(--royal-blue);margin-bottom:8px;">Delegation Package</h3>
+      <p class="section-body" style="margin-bottom:20px;font-size:0.95rem;">
+        The delegation fee encompasses a comprehensive package of privileges, including: <strong>nine gourmet meals</strong>, a bespoke <strong>delegation kit</strong> (comprising a file, pen, chit pad, and notepad), and an official <strong>participation certificate</strong>.
+      </p>
+
+      <table class="fee-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount (INR)</th>
+            <th>Includes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Early bird</td>
+            <td style="font-weight:600;color:var(--royal-blue);">₹ 1800 /-</td>
+            <td>Delegation Kit, Meals, Certificate</td>
+          </tr>
+          <tr>
+            <td>Individual delegates</td>
+            <td style="font-weight:600;color:var(--royal-blue);">₹ 2000 /-</td>
+            <td>Press Kit, Meals, Certificate</td>
+          </tr>
+          <tr>
+            <td>School Delegation Fee</td>
+            <td style="font-weight:600;color:var(--royal-blue);">₹ 2000 /-</td>
+            <td>Per Participating Institution</td>
+          </tr>
+<tr>
+            <td>Referral cord Fee</td>
+            <td style="font-weight:600;color:var(--royal-blue);">₹ 1800 /-</td>
+            <td>Per Participating Institution</td>
+          </tr>
+ <tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bank Details -->
+    <div class="bank-card">
+      <h3>Payment Details — Bank Transfer</h3>
+      <div class="bank-field">
+        <span class="field-label">Bank Name</span>
+        <span class="field-value"><span class="field-">　　　　</span>AXIS BANK</span>
+      </div>
+      <div class="bank-field">
+        <span class="field-label">Account Number</span>
+        <span class="field-value"><span class="field-">　　　　</span>925010055892839</span>
+      </div>
+      <div class="bank-field">
+        <span class="field-label">Account Name</span>
+        <span class="field-value"><span class="field-">　　　　</span>GURU NANAK FOUNDATION GLOBAL</span>
+      </div>
+      <div class="bank-field">
+        <span class="field-label">IFSC Code</span>
+        <span class="field-value"><span class="field-">　　　　</span>UTIB0001942</span>
+      </div>
+      <p style="margin-top:18px;font-family:'Montserrat',sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.45);line-height:1.7;letter-spacing:0.04em;">
+        ※ &nbsp;Kindly inscribe the name of your school in the <em>remarks column</em> while executing the transfer.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     AWARDS & RECOGNITION
+══════════════════════════════════════ -->
+<div class="awards-section">
+  <div class="awards-inner">
+    <div class="section-label" style="color:var(--gold);">Accolades &amp; Honours</div>
+    <h2 class="section-title" style="color:#fff;">Awards &amp; Recognition</h2>
+    <p class="section-body" style="color:rgba(255,255,255,0.65);max-width:700px;">
+      GNFGS-MUN'26 presents delegates with the distinguished opportunity to contend for highly coveted accolades, recognised across the MUN circuit as hallmarks of exceptional diplomatic and rhetorical prowess.
+    </p>
+
+    <div class="awards-grid">
+      <div class="award-card">
+        <span class="award-icon">🥇</span>
+        <div class="award-title">Best Delegate</div>
+        <div class="award-points">5 <span>Points</span></div>
+      </div>
+      <div class="award-card">
+        <span class="award-icon">🥈</span>
+        <div class="award-title">High Commendation</div>
+        <div class="award-points">3 <span>Points</span></div>
+      </div>
+      <div class="award-card">
+        <span class="award-icon">🥉</span>
+        <div class="award-title">Special Mention</div>
+        <div class="award-points">1 <span>Point</span></div>
+      </div>
+      <div class="award-card">
+        <span class="award-icon">🎖️</span>
+        <div class="award-title">Verbal Mention</div>
+        <div class="award-points">— <span>Honourable</span></div>
+      </div>
+    </div>
+
+    <div class="best-school">
+      <h3>🏆 Best School Delegation Award</h3>
+      <p>Schools maintaining representation across all committees shall be eligible to compete for the distinguished title of <em>Best School Delegation</em>, determined by the cumulative points accrued by all delegates of the respective institution.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<div class="contact-section">
+  <div class="contact-inner">
+    <div class="section-label">Contact &amp; Enquiries</div>
+    <h2 class="section-title">Reach Out to Our Team</h2>
+
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>MUN Coordination</h3>
+        <div class="contact-item">
+          <span class="icon">👤</span>
+          <span>Manpreet Singh (MUN Coordinator)     </span></span>
+	<span>Ms. Muddita (Secretary-General)	</span></span>
+	<span>Mr. Piyush (Deputy -General)	</span></span>
+
+
+
+        </div>
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <span>8427014453　　　　　                </span></span>
+	   <span>8283914403　　                　　　</span></span>
+	 <span>7837414239　　                　　　</span></span>
+
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <span>gnfglobalschool@gmail.com　　　　</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🌐</span>
+          <span>https://gnfgsjalandhar.com　　　　　</span></span>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <h3>Social Media &amp; Updates</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text-mid);line-height:1.8;margin-bottom:18px;">
+          For the latest announcements, committee updates, Rules of Procedure, country matrices, and all conference-related communications, we warmly encourage you to follow our official social media handles.
+        </p>
+        <div class="contact-item">
+          <span class="icon">📸</span>
+          <span>https://www.instagram.com/gnfglobalschool　　　　</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📘</span>
+          <span>https://www.facebook.com/share/18gtWPHLDH/ </span></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:50px;padding:40px;background:linear-gradient(135deg,rgba(26,42,108,0.06),rgba(201,168,76,0.06));border:1px solid rgba(201,168,76,0.2);text-align:center;">
+      <div style="font-family:'Cinzel',serif;font-size:1rem;color:var(--royal-blue);letter-spacing:0.1em;margin-bottom:12px;">A Closing Salutation</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--text-mid);line-height:1.8;max-width:650px;margin:0 auto;">
+        "We eagerly anticipate the participation of your esteemed institution and look forward to welcoming your delegation to what promises to be a momentous inaugural conference."
+      </p>
+      <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">
+        — Team GNFGS-MUN'26
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-logo">GNFGS — MUN ' 26</div>
+    <div class="footer-school">
+      GURU NANAK FOUNDATION GLOBAL SCHOOL<br>
+      URBAN ESTATE, PHASE-1, JALANDHAR
+  <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">
+        — Connect, Engage, Inspire
+
+ <div class="socials">
+    <a href="https://gnfgsjalandhar.com/" target="_blank">
+        <i class="fas fa-globe"></i> Website
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100064026912991&mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+
+    <a href="https://www.instagram.com/gnfglobalschool" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+ <a href="https://maps.app.goo.gl/88vk7ESgHnDm83pt7?g_st=awb" target="_blank">
+        <i class="fab fa-instagram"></i> Location
+    </a>
+
+</div>
+
+
+<div class="reg-section" style="background: #fff; padding: 80px 40px;">
+  <div class="reg-inner">
+    <div class="section-label">Investment & Payment</div>
+    <h2 class="section-title">Registration Fees & Transactions</h2>
+    <p class="section-body">
+      To confirm your participation, please complete the registration fee payment via the following methods. Once the transaction is processed, please ensure you update your details in our master tracking sheet.
+    </p>
+
+
+<div class="reg-section" style="background: #fff; padding-top: 0;">
+  <div class="reg-inner">
+    <div class="section-label">Investment & Payment</div>
+    <h2 class="section-title">Registration Fees & Transactions</h2>
+    <p class="section-body">
+      To confirm your participation, please complete the registration fee payment via the following methods. Once the transaction is processed, please ensure you update your details in our master tracking sheet.
+    </p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdjaVF9TRRl_S3VFfGT6uLAgJcZcBfWPctpmk_yLYVRM6sSPA/viewform?usp=dialog" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   style="
+     display: inline-block;
+     padding: 15px 30px;
+     background-color: #007bff;
+     color: #ffffff;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 18px;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+     transition: background-color 0.3s ease;
+   "
+   onmouseover="this.style.backgroundColor='#0056b3'"
+   onmouseout="this.style.backgroundColor='#007bff'">
+   Register Now
+</a>
+
+    <div class="bank-card">
+      <h3>Official Bank Account Details</h3>
+      <div class="bank-field">
+        <span class="field-label">Account Holder</span>
+        <span class="field-value">GURU NANAK FOUNDATION GLOBAL</span>
+      </div>
+      <div class="bank-field">
+        <span class="field-label">Helpdesk</span>
+        <span class="field-value">Mr.Chand</span>
+      </div>
+<div class="bank-field">
+        <span class="field-label">Contact number</span>
+        <span class="field-value">9877859595</span>
+      </div>
+      
+<div class="payment-section">
+    <h3>Scan & Pay</h3>
+
+    <img 
+      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=mab.037215019420033@axisbank&pn=Guru%20Nanak%20Foundation%20Global%20School&cu=INR" 
+      alt="UPI QR Code">
+
+
+    <p>UPI ID: mab.037215019420033@axisbank</p>
+ <div style="margin-top:20px;font-family:'Montserrat',sans-serif;font-size:0.92rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:Yellow;">
+        — "Double-check your entries—this form can only be submitted once."
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; padding: 30px; border: 1px solid var(--gold);">
+      <h3 style="font-family: 'Cinzel', serif; color: var(--royal-blue); margin-bottom: 15px;">Delegate Payment Tracking</h3>
+      <p style="margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;">
+        After payment, all delegates are required to record their transaction details in our official spreadsheet for verification.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSenT8b-S2jVUHbdcXSbmvtgruLB-aJ4b466tzYCeyAbAJzNKQ/viewform?usp=publish-editor" 
+         target="_blank" 
+         style="display: inline-block; background: var(--royal-blue); color: #fff; padding: 12px 30px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px;">
+         Access Payment Sheet
+      </a>
+
+    </div>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
